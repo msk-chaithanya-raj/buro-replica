@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/assests/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/assests/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>We are Büro</title>
+</head>
+<body class="dark-theme text-light">
+    <div class="main-container">
+        <!-- Navbar section -->
+        <nav>
+            <div class="navbar-sm">
+                <div class="company-logo-info">
+                    <h1>We are</h1>
+                    <img src = 'public/assests/favicon-32x32.png' class="logo"/>
+                </div>
+                <div class="menu-icon" onclick="toggleNavbarItemsList()">
+                    <input class="menu-icon__cheeckbox" type="checkbox" />
+                    <div>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-items" id = 'navbarItemsList'>
+                <li class="item-work">Work</li>
+                <li class="item-studios">Studios</li>
+                <li class="item-recognition">Recognition</li>
+            </ul>
+            
+        </nav>
+        
+        <!-- Home section -->
+        <div class="home-section text-animation-container">
+            <h1 class="description cssanimation sequence multi-line-heading">
+                Hello.
+                Büro here.<br>
+                We craft remarkable experiences<br> on screen and paper.
+            </h1>
+            <div class="changing-text-container">
+                <div class="bouncing-circle-container">
+                    <div class="shadow"></div>
+                    <div class="bouncing-circle"></div>
+                </div>
+                <div class="changing-text" id="text-display">Ignore</div>
+            </div>
+        </div>
+        <!-- Spacer (85vh of space) -->
+        <div style="height: 85vh;"></div>
+         <!-- Reel player section -->
+        <div class="reel-container" style="max-width: 100vw; max-height: 100vh; font-size: 40px; overflow: hidden; position: relative;">
+            <!-- "Play our reel" text positioned correctly in the reel section -->
+            <h1 id="reel-text" style="position: absolute; z-index: 2; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff; cursor: pointer;">
+                Play our reel
+            </h1>
+            
+            <!-- Embed video as background, constrained to fit screen width -->
+            <video id="reel-video" autoplay muted loop playsinline style="opacity:0.5; width: 100%; height: 100%; object-fit: cover;" paused>
+                <source src="https://burocratik.com/wp-content/uploads/2023/06/short-reel-2023.mp4#t=0.01" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!--Meet Our Brands Section-->
+        <div class="brands-section">
+            <h1>1999 - 2024</h1>
+            <h1>Two decades of branding by Büro.</h1>
+            <h2>Meet our brands</h2>
+        </div>
+        <!-- Global Projects section -->
+        <div class="global-projects-container">
+            <div class="project">
+                <h1>Sandclock</h1>
+                <p>3D, Art Direction, Packaging, Rebranding, Strategy, Website</p>
+                <video class="project-video" muted loop>
+                    <source src='https://burocratik.com/wp-content/uploads/2022/08/sandclock-casestudy.mp4#t=0.01' type='video/mp4' />
+                </video>
+            </div>
+            <div class="project">
+                <h1>Hematogenix</h1>
+                <p>3D, Art Direction, Packaging, Rebranding, Strategy, Website</p>
+                <video class="project-video hematogenix-video" muted loop>
+                    <source src='https://burocratik.com/wp-content/uploads/2022/09/hemato-buro.mp4#t=0.01' type='video/mp4' />
+                </video>
+            </div>
+        </div>
+
+    </div>
+              
+    </div>
+ 
+    <!-- JavaScript file -->
+    <script src="index.js"></script>
+</html>

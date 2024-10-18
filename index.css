@@ -1,0 +1,353 @@
+@font-face {
+    font-family: 'Graphik-bold';
+    src: url('Graphik-Regular-Web.woff2') format('woff2');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Graphik';
+    src: url('Graphik-Light-Web.woff2') format('woff2');
+    font-weight: normal;
+}
+
+/* General Styles */
+* {
+    font-family: 'Graphik';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dark-theme {
+    background-color: #000000; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* nav bar */
+nav {
+    position: fixed;
+}
+.navbar-sm { 
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+}
+.company-logo-info {
+    display: flex;
+    flex-direction: row;
+}
+.logo {
+    margin-left: 10px;
+    height: 25px;
+    width: 25px;
+}
+
+
+:root {
+	--bar-bg: #fff;
+}
+
+.navbar-items {
+    display: none;
+    flex-direction: column;
+    margin: 20px;
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.navbar-items li {
+    cursor: pointer; 
+    transition: 0.3s; 
+    font-size: 60px;
+    background-color: #fff;
+    color: #000;
+}
+
+
+.menu-icon {
+    margin-left: auto;
+    align-self: center;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+    margin-right: 30px;
+
+	.menu-icon__cheeckbox {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		cursor: pointer;
+		z-index: 2;
+		-webkit-touch-callout: none;
+		opacity: 0;
+	}
+	div {
+		margin: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: 22px;
+		height: 12px;
+	}
+	span {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: var(--bar-bg, #fff);
+		border-radius: 1px;
+		transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
+
+		&:first-of-type {
+			top: 0;
+		}
+		&:last-of-type {
+			bottom: 0;
+		}
+	}
+	&.active,
+	.menu-icon__cheeckbox:checked + div {
+		span {
+			&:first-of-type {
+				transform: rotate(45deg);
+				top: 5px;
+			}
+			&:last-of-type {
+				transform: rotate(-45deg);
+				bottom: 5px;
+			}
+		}
+	}
+
+	&.active:hover span:first-of-type,
+	&.active:hover span:last-of-type,
+	&:hover .menu-icon__cheeckbox:checked + div span:first-of-type,
+	&:hover .menu-icon__cheeckbox:checked + div span:last-of-type {
+		width: 22px;
+	}
+
+	&:hover {
+		@media (min-width: 1024px) {
+			span:first-of-type {
+				width: 26px;
+			}
+
+			span:last-of-type {
+				width: 12px;
+			}
+		}
+	}
+}
+@media screen and (min-width:768px) {
+    .menu-icon {
+        display: none;
+    }
+    nav {
+        position: fixed;  
+        top: 0;           
+        left: 0;          
+        width: 100%;  
+        color: white; 
+        z-index: 1000; 
+        padding: 20px;
+        display: flex;
+    }
+    .navbar-items {
+        font-size: 23px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-self: center;
+        margin: auto;
+        width: 70%;
+    } 
+    li {
+        margin: 0px 110px;
+        background-color: #000;
+    }  
+    .navbar-items li {
+        cursor: pointer; 
+        transition: 0.3s; 
+        font-size: 25px;
+        background-color: #000;;
+        color: #fff;
+        margin: auto;
+        
+    }
+    .navbar-sm { 
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+/* home section */
+.home-section {
+    min-height: 70vh;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.description {
+    font-size: 50px;
+    font-weight: bold;
+}
+.changing-text-container {
+    display: flex;
+}
+.changing-text {
+    margin-left: 15px;
+    font-size: 20px;
+    color: #ffffff;
+    transition: opacity 0.2s ease-in-out; /* Smooth transition */
+}
+
+
+/* CSS Animations */
+.text-animation-container  {
+    padding-left: 20px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.cssanimation span { 
+    display: inline-block; 
+}
+
+.leFadeInBottom span { 
+    animation-name: leFadeInBottom; 
+}
+.multi-line-heading span {
+    display: block; /* Make sure spans take up full width */
+    opacity: 0; /* Start as invisible */
+    transition: opacity 1s; /* Add a transition effect */
+}
+
+
+@keyframes leFadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+/* bouncing animation */
+.bouncing-circle-container {
+    position: relative; /* Position for the shadow */
+}
+
+.bouncing-circle {
+    width: 20px; /* Circle width */
+    height: 20px; /* Circle height */
+    background-color: #ffffff; /* Circle color (white) */
+    border-radius: 50%; /* Make it round */
+    animation: bounce 1s ease infinite; /* Animation */
+    z-index: 2; /* Ensure circle is above the shadow */
+}
+
+.shadow {
+    width: 20px; /* Shadow width */
+    height: 15px; /* Shadow height */
+    background-color: rgb(255, 255, 255); /* Shadow color */
+    border-radius: 50%; /* Make it round */
+    bottom: 8px; /* Position the shadow */
+    z-index: 1; /* Ensure shadow is below the circle */
+    animation: shadow-bounce 1s ease infinite; /* Animation */
+}
+
+/* Bounce Animation for Circle */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start and end position */
+    }
+    20% {
+        transform: translateY(-60px); /* Highest point */
+    }
+    40% {
+        transform: translateY(-30px); /* Mid-point bounce */
+    }
+}
+
+/* Bounce Animation for Shadow */
+@keyframes shadow-bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start and end position */
+    }
+    20% {
+        transform: translateY(-50px); /* Adjust shadow height */
+    }
+    40% {
+        transform: translateY(-25px); /* Mid-point bounce for shadow */
+    }
+}
+
+/* Brands Section */
+.brands-section {
+    padding: 60px 20px;   
+}
+.brands-section h1 {
+    font-size: 60px;
+}
+.brands-section h2 {
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+/* Global projects section */
+.global-projects-container {
+    width: 100%;
+}
+
+.global-projects-container div {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.global-projects-container div h1 {
+    position: absolute;
+    margin-bottom: 20px;
+}
+.global-projects-container div p {
+    position: absolute;
+}
+.project-video {
+    width: 100%; 
+    height: auto; 
+}
+@media screen and (min-width: 768px) {
+    .global-projects-container {
+        display: flex;
+    }
+    .global-projects-container div {
+        width: 50%;
+    }
+}
